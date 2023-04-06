@@ -2,5 +2,5 @@
 """returns a copy of lists"""
 
 
-def copy_list(my_list):
-    return (my_list.copy())
+def copy_list(l):
+    return l.copy()
