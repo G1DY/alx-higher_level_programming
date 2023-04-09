@@ -11,21 +11,16 @@ def text_indentation(text):
         TypeError: text must be a string
 
     """
-    if not isinstance(text, str):
+    if type(text) is not str:
         raise TypeError("text must be a string")
 
-    count = 0
-    while count < len(text) and text[count] == ' ':
-        count += 1
+    s = text[:]
 
-        while count < len(text):
-            print(text[count], end="")
-            if text[count] == "\n" or text[count] in ".?:":
-                if text[count] in ".?:":
-                    print("\n")
-                count += 1
-                while count < len(text) and text[count] == ' ':
-                    count += 1
-                continue
-            count += 1
+    for d in ".?:":
+        list_text = s.split(d)
+        s = ""
+        for i in list_text:
+            i = i.strip(" ")
+            s = i + d if s is "" else s + "\n\n" + i + d
 
+    print(s[:-3], end="")
