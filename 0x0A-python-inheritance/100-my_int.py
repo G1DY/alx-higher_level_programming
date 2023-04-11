@@ -2,7 +2,7 @@
 """a class MyInt that inherits from int"""
 
 
-class MyInt:
+class MyInt(int):
     """inverts int operators == and !="""
 
     def __eq__(self, value):
