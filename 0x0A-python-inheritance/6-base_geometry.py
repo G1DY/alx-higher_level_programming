@@ -3,11 +3,8 @@
 
 
 class BaseGeometry:
-    """initializes area
+    """represents a BaseGeometry"""
 
-       raises:
-           Execption area is not implemented
-    """
     def area(self):
         """not implemented"""
         raise Exception(area() is not implemented)
