@@ -11,14 +11,14 @@ class Rectangle(BaseGeometry):
             width: width of the rectangle
             height: length of the rectangle
         """
-        self.integer_validator("width", width)
+        super().integer_validator("width", width)
         self.__width = width
-        self.integer_validator("height", height)
+        super().integer_validator("height", height)
         self.__height = height
 
     def area(self):
         """returns area of the rectangle"""
-        return self.__width * self__height
+        return self.__width * self.__height
 
     def __str__(self):
         """returns the print and str representation of the rectangle"""
