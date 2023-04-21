@@ -36,7 +36,19 @@ class Rectangle(Base):
 
         @width.setter
         def width(self, value):
-            """sets the width value"""
+            """sets the width value
+
+            Args:
+                value: value of width in int
+
+            Raises:
+                TypeError: if value is non-int
+                ValueError: if value is <=0
+            """
+            if not isinstance(value, int):
+                raise TypeError("width must be an integer")
+            elif value <= 0:
+                raise ValueError("width must be > 0")
             self.__width = value
 
         @property
@@ -46,5 +58,61 @@ class Rectangle(Base):
 
         @height.setter
         def height(self, value):
-            """sets the height value"""
+            """sets the height value
+
+            Args:
+                value : value of height must be an int
+
+            Raises:
+                TypeError: if value is not an int
+                ValueError: if value <= 0
+            """
+            if not isinstance(value, int):
+                raise TypeError("height must be an integer")
+            elif value <= 0:
+                raise ValueError("height must be > 0")
             self.__height = value
+
+        @property
+        def x(self):
+            """gets the x coordinate"""
+            return self.__x
+
+        @x.setter
+        def x(self, value):
+            """sets the x-coordinate to position
+
+            Args:
+                x: value of x coordinate as an int
+
+            Raises:
+                TypeError: if x is not an int
+                ValueError: if x is < 0
+            """
+            if not isinstance(value, int):
+                raise TypeError("x must be an integer")
+            elif x < 0:
+                raise ValueError("x must be >= 0")
+            self.__x = value
+
+        @property
+        def y(self):
+            """gets the y coordinate"""
+            return self.__y
+
+        @y.setter
+        def y(self, value):
+            """sets the y coordinate to position
+
+            Args:
+                y: value of y coordinate as an int
+
+            Raises:
+                TypeError: y must be an integer
+                ValueError: y must be > 0
+            """
+            if not isinstance(value, int):
+                raise TypeError("y must be an integer")
+            elif y < 0:
+                raise ValueError("y must be >= 0")
+            self.__y = value
