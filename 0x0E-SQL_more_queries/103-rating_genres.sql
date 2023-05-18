@@ -6,5 +6,5 @@ ON s.`genre_id` = g.`id`
 INNER JOIN `tv_show_ratings` AS r
 ON r`.show_id` = s.`show_id`
 GROUP BY `name`
-ORDER BY `rating`;
+ORDER BY `rating` DESC;
 
