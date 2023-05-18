@@ -1,10 +1,10 @@
 -- a script that lists all Comedy shows in the database hbtn_0d_tvshows
 SELECT t.`title`
-FROM `tv_shows` AS s
-INNER JOIN `tv_show_genres` AS t
-ON s.`id` = t.`show_id`
+FROM `tv_shows` AS t
+INNER JOIN `tv_show_genres` AS s 
+ON t.`id` = s.`show_id`
 INNER JOIN `tv_genres` AS g
-ON g.`id` = t.`genre_id`
+ON g.`id` = s.`genre_id`
 WHERE g.`name` = "Comedy"
 ORDER BY t.`title`;
 
