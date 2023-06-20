@@ -2,7 +2,7 @@
 """Start link class to table in database and
    lists all state objects from the database
 """
-from sys import argv
+import sys
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
@@ -10,7 +10,7 @@ from sqlalchemy import create_engine
 
 if __name__ == "__main__":
     db_uri = 'mysql+mysqldb://{}:{}@localhost/{}'.format(
-        sys.argv[1], sys.argv[2], sys.argv[3])
+        sys.argv[1], sys.argv[2], sys.argv[3], 3306)
     engine = create_engine(db_uri)
 
     Session = sessionmaker(bind=engine)
