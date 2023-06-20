@@ -7,13 +7,10 @@ import MySQLdb as _mysql
 import sys
 
 if __name__ == "__main__":
-    if len(sys.argv) != 6:
-        print("Access Using: python3 filename username \
-              password database state")
+
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
-    state = sys.argv[4]
 
     db = _mysql.connect(host="localhost", user=username,
                         passwd=password, db=database, port=3306)
