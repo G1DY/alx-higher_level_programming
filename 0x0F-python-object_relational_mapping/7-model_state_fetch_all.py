@@ -9,8 +9,8 @@ from sqlalchemy import create_engine
 
 
 if __name__ == "__main__":
-    db_uri = 'mysql+mysqldb://{}:{}@localhost/{}'.format(
-        sys.argv[1], sys.argv[2], 3306, sys.argv[3])
+    db_uri = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
+        sys.argv[1], sys.argv[2], sys.argv[3])
     engine = create_engine(db_uri)
 
     Session = sessionmaker(bind=engine)
