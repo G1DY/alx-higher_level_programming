@@ -9,9 +9,9 @@ from relationship_city import City
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-if __name__ == "__main__":
+def print_states_cities(username, password, database):
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.
-                           format(sys.argv[1], sys.argv[2], sys.argv[3]),
+                           format(username, password, database),
                            pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
@@ -19,10 +19,19 @@ if __name__ == "__main__":
     session = Session()
 
     for instance in session.query(State).order_by(State.id):
-        if instance.cities:
-            print(instance.id, instance.name, sep=": ")
-            city_info = {}
-            for city in instance.cities:
-                city_info[city.id] = city.name
-            for city_id, city_name in city_info.items():
-                print("    {}: {}".format(city_id, city_name))
+        print(instance.id, instance.name, sep=": ")
+        for city_ins in instance.cities:
+            print("    ", end="")
+            print(city_ins.id, city_ins.name, sep=": ")
+    session.close()
+
+if __name__ == "__main__":
+    if len(sys.argv) != 4:
+        print("Usage: python3 filename username password database")
+        sys.exit(1)
+
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
+
+    print_states_cities(username, password, database)
