@@ -2,11 +2,11 @@
 """Defines a State and a Base class to work with
    MySQLAlchemy ORM
 """
-from sqlalchemy import Column, Integer, String, Metadata
+from sqlalchemy import Column, Integer, String, MetaData
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 
-mymetadata = Metadata()
+mymetadata = MetaData()
 Base = declarative_base(metadata=mymetadata)
 
 
