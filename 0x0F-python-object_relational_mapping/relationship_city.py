@@ -2,9 +2,9 @@
 """Defines a City class to work with
    MySQLAlchemy ORM
 """
-from relationship_state import Base, State
+from relationship_state import Base
 from sqlalchemy import Column, Integer, String, ForeignKey
-
+from sqlalchemy.ext.declarative import declarative_base
 
 class City(Base):
     """Class city
@@ -17,6 +17,6 @@ class City(Base):
     """
     __tablename__ = "cities"
 
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, unique=True, nullable=False, primary_key=True)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey('state.id'), nullable=False)
+    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
