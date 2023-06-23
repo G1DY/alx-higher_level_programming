@@ -9,6 +9,7 @@ from relationship_city import City
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
+
 def print_states_cities(username, password, database):
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.
                            format(username, password, database),
@@ -24,6 +25,7 @@ def print_states_cities(username, password, database):
             print("    ", end="")
             print(city_ins.id, city_ins.name, sep=": ")
     session.close()
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
