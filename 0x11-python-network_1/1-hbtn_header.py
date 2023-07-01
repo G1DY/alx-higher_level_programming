@@ -6,7 +6,7 @@ import urllib.request
 
 def request_urlopen():
     url = sys.argv[1]
-    request = urlib.request.Request(url)
+    request = urllib.request.Request(url)
     with urllib.request.urlopen(request) as response:
         print(dict(response.headers).get("X-Request-Id"))
 
