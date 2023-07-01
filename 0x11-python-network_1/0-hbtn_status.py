@@ -3,8 +3,9 @@
 import urllib.request
 
 
-def requests_urlopen(request):
-    request = urllib.request.Request("https://alx-intranet.hbtn.io/status")
+def requests_urlopen():
+    url = "https://alx-intranet.hbtn.io/status"
+    request = urllib.request.Request(url)
     with urllib.request.urlopen(request) as response:
         body = response.read()
         print("Body response:")
@@ -14,4 +15,4 @@ def requests_urlopen(request):
 
 
 if __name__ == "__main__":
-    request()
+    requests_urlopen()
