@@ -1,5 +1,5 @@
 <center><h1>Python - Network #1</h1></center>
-In this Project we used the URLLIB python module and the python requests package to fetch and send requests to the server over the HTTP protocol. We also learnt how to manipulate data using HTTP requests methods and how to fetch json resources. I wrote scripts on urllib.request functions. Task 10 was an interview challenge to test our understanding on the project.
+In this Project we used the `URLLIB` python module and the python `requests` package to fetch and send requests to the server over the HTTP protocol. We also learnt how to manipulate data using HTTP requests methods and how to fetch json resources. I wrote scripts on `urllib.request` using `with` statements and packages `requests` & `sys`. Task 10 was an interview challenge to test our understanding on the project.
 
 ---
 
