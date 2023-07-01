@@ -5,7 +5,7 @@
 import requests
 
 
-def requests():
+def requests_get():
     r = requests.get("https://alx-intranet.hbtn.io/status")
     print("Body response:")
     print("\t- type: {}".format(type(r.text)))
@@ -13,4 +13,4 @@ def requests():
 
 
 if __name__ == "__main__":
-    requests()
+    requests_get()
