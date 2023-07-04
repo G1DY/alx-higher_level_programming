@@ -6,8 +6,8 @@ import requests
 import sys
 
 
-def github_commits():
-    url = "https://api.github.com/repos/{}/{}/commits/".format(
+def gbcommits():
+    url = "https://api.github.com/repos/{}/{}/commits".format(
         sys.argv[2], sys.argv[1])
     response = requests.get(url)
     commits = response.json()
@@ -26,4 +26,4 @@ def github_commits():
 
 
 if __name__ == "__main__":
-    github_commits()
+    gbcommits()
