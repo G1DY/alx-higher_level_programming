@@ -17,12 +17,8 @@ def gbcommits():
                 commits[i]["sha"],
                 commits[i]["commit"]["author"]["name"]
              ))
-    except (KeyError, IndexError) as e:
-        print("Error: Failed to retrieve commits data.")
-        print(response.content)
-    else:
-        print("Error: Failed to fetch commits from GitHub API.")
-        print(response.content)
+    except IndexError:
+        pass
 
 
 if __name__ == "__main__":
