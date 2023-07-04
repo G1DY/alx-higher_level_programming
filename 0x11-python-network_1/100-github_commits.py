@@ -11,13 +11,18 @@ def github_commits():
         sys.argv[2], sys.argv[1])
     response = requests.get(url)
     commits = response.json()
-    if response.ok:
-        for commit in commits[:10]:
-            SHA = commit.get("sha")
-            Author_Name = commit.get("commit").get("author").get("name")
-            print("{}: {}".format(SHA, Author_Name))
+    try:
+            for i in range(10):
+                print("{}: {}".format(
+                    commits[i]["sha"],
+                    commits[i]["commit"]["author"]["name"]
+                ))
+    except (KeyError, IndexError) as e:
+        print("Error: Failed to retrieve commits data.")
+        print(response.content)
     else:
-        print("Could not fetch commits")
+        print("Error: Failed to fetch commits from GitHub API.")
+        print(response.content)
 
 
 if __name__ == "__main__":
