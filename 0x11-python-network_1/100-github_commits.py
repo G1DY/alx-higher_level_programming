@@ -12,11 +12,11 @@ def github_commits():
     response = requests.get(url)
     commits = response.json()
     try:
-            for i in range(10):
-                print("{}: {}".format(
-                    commits[i]["sha"],
-                    commits[i]["commit"]["author"]["name"]
-                ))
+        for i in range(10):
+            print("{}: {}".format(
+                commits[i]["sha"],
+                commits[i]["commit"]["author"]["name"]
+             ))
     except (KeyError, IndexError) as e:
         print("Error: Failed to retrieve commits data.")
         print(response.content)
